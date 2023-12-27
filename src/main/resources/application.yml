@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: project-service
+          uri: lb://PROJECT-SERVICE
+          predicates:
+            - Path=/project-service/**
+          filters:
+            - AuthenticationFilter
+
+        - id: tag-service
+          uri: lb://TAG-SERVICE
+          predicates:
+            - Path=/tag-service/**
+          filters:
+            - AuthenticationFilter
+
+        - id: authentication-service
+          uri: lb://AUTHENTICATION-SERVICE
+          predicates:
+            - Path=/authentication-service/**
+#
+#  application:
+#    name: API-GATEWAY
+#
+#server:
+#  port: 8765
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
