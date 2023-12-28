@@ -17,7 +17,7 @@ spring:
             - AuthenticationFilter
 
         - id: authentication-service
-          uri: lb://AUTHENTICATION-SERVICE
+          uri: lb://authentication-service
           predicates:
             - Path=/authentication-service/**
 #
