@@ -16,10 +16,24 @@ spring:
           filters:
             - AuthenticationFilter
 
-        - id: authentication-service
-          uri: lb://authentication-service
+        - id: subscription-service
+          uri: lb://SUBSCRIPTION-SERVICE
           predicates:
-            - Path=/authentication-service/**
+            - Path=/subscription-service/**
+          filters:
+            - AuthenticationFilter
+
+        - id: account-service
+          uri: lb://ACCOUNT-SERVICE
+          predicates:
+            - Path=/account-service/**
+          filters:
+            - AuthenticationFilter
+
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth-service/**
 #
 #  application:
 #    name: API-GATEWAY
