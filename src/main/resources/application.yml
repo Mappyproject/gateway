@@ -8,21 +8,21 @@ spring:
             allowedMethods: "*"
             allowedHeaders: "*"
       routes:
-        - id: project-service
+        - id: PROJECT-SERVICE
           uri: lb://PROJECT-SERVICE
           predicates:
             - Path=/project-service/**
           filters:
             - AuthenticationFilter
 
-        - id: tag-service
+        - id: TAG-SERVICE
           uri: lb://TAG-SERVICE
           predicates:
             - Path=/tag-service/**
           filters:
             - AuthenticationFilter
 
-        - id: subscription-service
+        - id: SUBSCRIPTION-SERVICE
           uri: lb://SUBSCRIPTION-SERVICE
           predicates:
             - Path=/subscription-service/**
