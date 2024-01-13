@@ -1,4 +1,5 @@
 FROM openjdk:17
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} gateway.jar
+ENTRYPOINT ["java", "-jar", "/gateway.jar"]
 EXPOSE 8765
-COPY target/gateway-0.0.1-SNAPSHOT.jar mappy-gateway.jar
-ENTRYPOINT ["java", "-jar", "/mappy-gateway.jar"]
