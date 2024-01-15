@@ -10,15 +10,15 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: PROJECT-SERVICE
-          uri: lb://PROJECT-SERVICE
-          predicates:
-            - Path=/project-service/**
-
-        - id: TAG-SERVICE
-          uri: lb://TAG-SERVICE
-          predicates:
-            - Path=/tag-service/**
+#        - id: PROJECT-SERVICE
+#          uri: lb://PROJECT-SERVICE
+#          predicates:
+#            - Path=/project-service/**
+#
+#        - id: TAG-SERVICE
+#          uri: lb://TAG-SERVICE
+#          predicates:
+#            - Path=/tag-service/**
 
         - id: SUBSCRIPTION-SERVICE
           uri: lb://SUBSCRIPTION-SERVICE
@@ -44,5 +44,5 @@ eureka:
     fetchRegistry: true
     serviceUrl:
 #      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
-      defaultZone: http://localhost:8761/eureka
-#      defaultZone: http://mappy-eureka:8761/eureka
+#      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://mappy-eureka:8761/eureka
