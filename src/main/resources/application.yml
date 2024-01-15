@@ -30,6 +30,11 @@ spring:
           predicates:
             - Path=/account-service/**
 
+        - id: eureka
+          uri: lb://eureka
+          predicates:
+            - Path=/eureka/**
+
 eureka:
   instance:
     preferIpAddress: true
@@ -38,5 +43,6 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
+#      defaultZone: http://eureka-0.eureka.default.svc.cluster.local:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 #      defaultZone: http://mappy-eureka:8761/eureka
